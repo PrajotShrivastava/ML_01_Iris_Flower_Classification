@@ -22,6 +22,10 @@ The three models were compared with stratified 5-fold cross-validation on the tr
 
 **KNN** had the highest CV accuracy and the lowest variance across folds, and it got 29 of the 30 test samples right. It was saved as a `StandardScaler → KNeighborsClassifier` pipeline, so new inputs are scaled automatically.
 
+<p align="center">
+  <img src="images/confusion_matrix.png" alt="KNN confusion matrix on the 30-sample test set: setosa 10/10, versicolor 9/10 (one predicted as virginica), virginica 10/10" width="420">
+</p>
+
 > These results apply to this dataset, these two features and this train/test split (`random_state=42`). They don't mean KNN is better in general.
 
 ---
@@ -36,9 +40,12 @@ ML_01_Iris_Flower_Classification/
 │   ├── iris.names            # Dataset description
 │   └── Index
 ├── 01_logisticRegression.ipynb   # EDA, Logistic Regression, CV, overfitting demo
-├── 02_decitionTree.ipynb         # Decision Tree + GridSearchCV over max_depth
+├── 02_decisionTree.ipynb         # Decision Tree + GridSearchCV over max_depth
 ├── 03_kNN.ipynb                  # KNN with scaling + GridSearchCV over n_neighbors
 ├── 04_modelEval.ipynb            # Model comparison, saving the model, prediction
+├── models/
+│   └── best_knn_model.pkl        # Saved StandardScaler + KNN pipeline
+├── images/                       # Figures used in this README
 ├── requirements.txt
 └── README.md
 ```
@@ -60,6 +67,10 @@ The [UCI Iris dataset](https://archive.ics.uci.edu/dataset/53/iris) has **150 sa
 | `species` (target) | 🎯 |
 
 **Why only petal features?** In the EDA pairplot, petal length and petal width separate the three species much more clearly than the sepal measurements. All models use the same two features so the comparison is fair.
+
+<p align="center">
+  <img src="images/decision_regions.png" alt="Scatter plot of petal length vs petal width for all 150 samples, with the KNN decision regions shaded: setosa sits apart in the bottom-left, while versicolor and virginica overlap slightly near petal length 5 cm" width="680">
+</p>
 
 ---
 
