@@ -82,8 +82,8 @@ The [UCI Iris dataset](https://archive.ics.uci.edu/dataset/53/iris) has **150 sa
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/PrajotShrivastava/ML_01_Iris_Flower_Classification.git
+cd ML_01_Iris_Flower_Classification
 ```
 
 ### 2. Install dependencies
